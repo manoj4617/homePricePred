@@ -2,8 +2,7 @@
 Run the file homePred.py 
 python homePred.py
 
-then copy the .pickle file and columns.json file
-create a folder named model inside the server folder then paste the copied files there
+Make sure that you have Flask installed in  your system or in the Virtual env
 
 now activate your python virtual environment
 navigate to the server folder run the app.py file 
