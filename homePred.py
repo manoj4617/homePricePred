@@ -254,13 +254,13 @@ def predict_price(location,sqft,bath,bhk):
 print(predict_price('1st Phase JP Nagar',1000, 2, 2),
 predict_price('1st Phase JP Nagar',1000, 3, 3))
 
-with open('./model/banglore_home_prices_linear_model.pickle','wb') as f:
+with open('banglore_home_prices_linear_model.pickle','wb') as f:
     pickle.dump(lr_clf,f)
 
-with open('./model/banglore_home_prices_random_model.pickle','wb') as f:
+with open('banglore_home_prices_random_model.pickle','wb') as f:
     pickle.dump(random_forest_model,f)
 
-with open('./model/banglore_home_prices_gradient_model.pickle','wb') as f:
+with open('banglore_home_prices_gradient_model.pickle','wb') as f:
     pickle.dump(gradient_booster_model,f)
 
 columns = {
