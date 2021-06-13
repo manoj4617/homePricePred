@@ -266,7 +266,7 @@ with open('banglore_home_prices_gradient_model.pickle','wb') as f:
 columns = {
     'data_columns' : [col.lower() for col in X.columns]
 }
-with open("./model/columns.json","w") as f:
+with open("columns.json","w") as f:
     f.write(json.dumps(columns))
 
 # %%
