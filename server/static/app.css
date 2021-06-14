@@ -128,6 +128,12 @@ h2 {
   z-index: -1;
 }
 
+.submit:hover{
+	cursor: pointer;
+	background-color:coral;
+	color:aqua;
+	transition: 300ms ease-in-out;
+}
 body, html {
   height: 100%;
 }

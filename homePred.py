@@ -184,12 +184,12 @@ lr_clf.score(X_test,y_test)
 
 #########################RANDOM FOREST#######################
 
-random_forest_model = RandomForestRegressor(n_estimators=100)
+random_forest_model = RandomForestRegressor(n_estimators=100,max_depth=2, random_state=0)
 random_forest_model.fit(X_train, y_train)
 random_forest_model.score(X_test, y_test)
 
 #########################GRADIENT BOOST#######################
-gradient_booster_model = GradientBoostingRegressor(n_estimators=100)
+gradient_booster_model = GradientBoostingRegressor(n_estimators=100,learning_rate=0.2)
 gradient_booster_model.fit(X_train, y_train)
 gradient_booster_model.score(X_test, y_test)
 
@@ -254,19 +254,19 @@ def predict_price(location,sqft,bath,bhk):
 print(predict_price('1st Phase JP Nagar',1000, 2, 2),
 predict_price('1st Phase JP Nagar',1000, 3, 3))
 
-with open('./model/banglore_home_prices_linear_model.pickle','wb') as f:
+with open('banglore_home_prices_linear_model.pickle','wb') as f:
     pickle.dump(lr_clf,f)
 
-with open('./model/banglore_home_prices_random_model.pickle','wb') as f:
+with open('banglore_home_prices_random_model.pickle','wb') as f:
     pickle.dump(random_forest_model,f)
 
-with open('./model/banglore_home_prices_gradient_model.pickle','wb') as f:
+with open('banglore_home_prices_gradient_model.pickle','wb') as f:
     pickle.dump(gradient_booster_model,f)
 
 columns = {
     'data_columns' : [col.lower() for col in X.columns]
 }
-with open("./model/columns.json","w") as f:
+with open("columns.json","w") as f:
     f.write(json.dumps(columns))
 
 # %%
